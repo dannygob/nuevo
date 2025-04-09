@@ -1,19 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <!-- Weight carta de la caja del peso  -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+        <!-- ubicacion de la caja de peso + texto   -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <!-- Texto en la caja de peso   -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peso:"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <!-- ubicacion de la caja de peso solamente   -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <!-- ubicacion boton dentro de la caja de peso y mostrar icono  -->
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:id="@+id/removeWeightButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_remove"
+                    />
+                <!-- Texto a mostrar y caracteristica em caja de peso   -->
+                <TextView
+                    android:id="@+id/weightTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="74 kg"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"/>
+                <!-- declaracion de botton con caractericas e icono    -->
+                <Button
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:id="@+id/addWeightButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:icon="@drawable/ic_add"
+                    />
+                <!-- fin de linear layaout de la caja de peso      -->
+            </LinearLayout>
+
+            <!-- fin de linear layaout de la caja de peso + txto   -->
+        </LinearLayout>
+        <!-- nueva carta para viste de slider de altura      -->
+    </androidx.cardview.widget.CardView>
+    <!-- crta dentro de la carta de altura    -->
+    <!-- Height -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+        <!-- colocacion de layout de la carta total      -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <!-- texto dentro de la carta (cabecera)      -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Altura:"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <!-- texto dentro de la carta peso para el slider -->
+            <TextView
+                android:id="@+id/heightTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="170 cm"
+                android:textAlignment="center"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+            <!-- slider buscado en google se define caracteristicas-->
+            <com.google.android.material.slider.Slider
+                android:id="@+id/heightSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                android:value="170"
+                android:valueFrom="40.0"
+                android:valueTo="240.0"
+                app:labelBehavior="gone"
+                app:tickVisible="false" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- carta de resultado-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+        <!-- texto de la carta de resultado con su ubicacion-->
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="00.00"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+        <!-- fin de carta de resultadi-->
+    </androidx.cardview.widget.CardView>
+    <!-- declaracion de botton resultado con caractericas  -->
+    <Button
+        android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Calcular IMC"
+        android:layout_gravity="center_horizontal"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">t.widget.ConstraintLayout>
