@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">nuevo</string>
+    <string name="slider_description">Desliza para seleccionar un valor entre 1 y 250</string>
 </resources>
